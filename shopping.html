@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.cdnfonts.com/css/graphik-trial" rel="stylesheet">
+    <script src="shopping.js"></script>
+  
+        <style>
+            @import url('https://fonts.cdnfonts.com/css/graphik-trial');
+</style>
+
+   
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Details </title>
+    <style>
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #007BFF ;
+        }
+
+        .hed {
+            display: flex;
+
+            background: #007BFF ;
+         
+            border-style: hidden;
+            width: calc(100%-649px);
+
+            margin-bottom: 20px;
+
+            overflow: hidden;
+            height: 150px;
+            position: static;
+            box-sizing: border-box;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5), 0px -4px 6px rgba(0, 0, 0, 0.5);
+
+        }
+
+
+
+        .header_panel_wrap {
+            display: flex;
+            min-width: 1366px;
+            max-width: 1590px;
+            border: 2px;
+           
+           
+            margin: auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+
+            padding: 10px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            width: 400px;
+            height: 20%;
+            position: relative;
+           right: 17px;
+            cursor:pointer;
+        }
+        
+
+
+
+        .l {
+            width: 100%;
+            height: 90px;
+            image-resolution: 100px;
+
+        }
+
+        .cart {
+
+
+            background-color:#007bff;
+         
+            width: 100px;
+            height: 42px;
+            vertical-align: top;
+            position: relative;
+            padding: 10px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            border-width: 2px;
+            font-weight: bolder;
+            transition: box-shadow 0.2s;
+            grid-column: 1;
+            overflow: hidden;
+
+        }
+
+        .cart:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+
+
+        .d1 {
+            background-color:#007bff;
+            color: white;
+            padding: 5px;
+            vertical-align: top;
+         
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            width: 100px;
+            text-align: center;
+            font-family: 'Graphik Trial', sans-serif;
+            font-weight: 800;
+            font-size: medium;
+           
+            transition: background-color 0.8s, color 0.8s;
+        }
+        .about_us {
+            background-color:#007bff;
+            color: white;
+            padding: 5px;
+            vertical-align: top;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            width: 100px;
+            text-align: center;
+            font-family: 'Graphik Trial', sans-serif;
+            font-weight: 800;
+            font-size: medium;
+            border-width: 2px;
+            transition: background-color 0.8s, color 0.8s;
+        }
+
+        .d2 {
+            background-color:#007bff;
+            color: white;
+            padding: 5px;
+            vertical-align: top;
+            border: none;
+            position: relative;
+
+
+            cursor: pointer;
+            border-radius: 25px;
+            border-width: 2px;
+            width: 100px;
+            text-align: center;
+            font-family: 'Graphik Trial', sans-serif;
+            font-weight: 800;
+            font-size: medium;
+          
+
+            transition: background-color 0.8s, color 0.8s;
+
+        }
+
+
+
+        .d1:hover,
+        .d2:hover,.about_us:hover {
+
+            color: white;
+            background-color: #0056b3;
+            transform: scale(1.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .search_button:active {
+            opacity: 0.5;
+        }
+
+        .search_button:hover {
+            box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.5);
+            transform: scale(1.1);
+            transition: transform 0.3s ease-in-out;
+
+        }
+
+        .search_bar {
+            background-color: #ffffff;
+            padding: 0px 64px 0px 12px;
+            height: 34px;
+            border: none;
+            border-radius: 10px;
+            width: 400px;
+            font-size: 14px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3), 0px -4px 6px rgba(0, 0, 0, 0.3);
+
+        }
+
+        .search_bar:hover {
+            transform: scale(1.1);
+            transition: transform 0.5s ease-in-out;
+
+        }
+
+        .search_bar_div {
+            padding-right: 10px;
+        }
+
+        .search_button {
+
+            color: white;
+            background-color: black;
+            width: 100px;
+            height: 40px;
+            display: inline-block;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            border-color: #00B207;
+            border-width: 1px;
+            font-weight: bolder;
+            border-style: solid;
+            transition: box-shadow 0.2s;
+        }
+
+        #image {
+            height: 380px;
+            width: 550px;
+            position: fixed;
+
+        }
+
+        .image_container {
+            height: 380px;
+            width: 550px;
+            background-color: black;
+            align-content: flex-end;
+            margin-left: 55%;
+        }
+
+        .nav_buttons {
+            display: flex;
+            gap: 10px;
+            margin-left: 800px;
+        }
+
+        body {
+
+            background-color: #E9ECEF;
+            display: block;
+            margin: 0;
+            font-family: 'Graphik Trial', sans-serif;
+           
+
+
+        }
+
+        .whole_product_div {
+            padding: 10px;
+        }
+
+        .product_section {
+            align-items: center;
+            display: block;
+            width: 100%;
+            max-width: 1360px;
+            height:auto;
+            border-radius: 15px;
+
+            z-index: 2;
+            background: #6C534E;
+            background-size: cover;
+            position: relative;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 10px;
+            background-color: #252b61;
+
+            justify-items: center;
+
+        }
+
+        .product_container {
+            width: 100%;
+            max-width: 1360px;
+            height: 600px;
+            background-color: white;
+            display: flex;
+            position: relative;
+            border-radius: 15px;
+        }
+
+        .img_section {
+            display: flex;
+            width: 630px;
+            height: 600px;
+            background-color:white;
+            border-radius: 15px;
+
+        }
+
+        .product_list_div {
+            width: 120px;
+            height:auto;
+            background-color: red;
+            border-radius: 15px;
+        }
+
+        .img_outer_div {
+            align-items: center;
+            width: 120px;
+            height: 86px;
+
+            border-radius: 15px;
+
+        }
+
+        .img_button_1 {
+            border: none;
+            width: 120px;
+            height: fit-content;
+            background-color: white;
+            border-radius: 15px 0px 0px 0px;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .img_button_1:hover {
+            border: 1px solid;
+            border-color: #00B207;
+            transform: scale(1.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            border-radius: 0px;
+        }
+
+        .img_button_2 {
+            border: none;
+            width: 120px;
+            height: fit-content;
+            background-color: white;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .img_button_2:hover {
+            border: 1px solid;
+            border-color: #00B207;
+            transform: scale(1.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .img_button_3 {
+            border: none;
+            width: 120px;
+            height: fit-content;
+            background-color: white;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .img_button_3:hover {
+            border: 1px solid;
+            border-color: #00B207;
+            transform: scale(1.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .product_img_div {
+            width: auto;
+            max-height: 86px;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .product_img {
+
+            object-fit: contain;
+            width: fit-content;
+            height: 86px;
+            overflow: hidden;
+            background-color: white;
+            border-radius: 15px;
+        }
+
+        .display_div {
+            width: fit-content;
+            height: auto;
+            overflow: hidden;
+            cursor: default;
+            border: none;
+            border-radius: 8px;
+            touch-action: none;
+        }
+
+        .display_div {
+            --x: 50%;
+            --y: 50%;
+        }
+
+        .display {
+            width: 510px;
+            height: 600px;
+            object-fit: contain;
+            border-radius: 15px;
+            background-repeat: no-repeat;
+            background-size:600px;
+            background-image: url('https://i5.walmartimages.com/seo/Equate-Original-Hand-Sanitizer-32-fl-oz_b71aaec3-987f-4e7a-863a-9f8e7d15d7fc.c83437d3980fc703ff6ac0621d70b4db.jpeg?odnHeight=117&odnWidth=117&odnBg=FFFFFF') ; /* Replace with a high-resolution image */
+     
+        }
+        .display_div:hover .display {
+            cursor: crosshair;
+            background-position: var(--x) var(--y);
+            background-size: 900px;
+            border: 1px solid;
+          }
+          .product_info {
+            width: 780px;
+            height: 600px;
+            background-color: #fbf2fc;
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Graphik Compact Trial', sans-serif;
+            color: #252b61;
+            font-size: larger;
+
+            font-weight:1000;
+          }     
+          .add_to_cart {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: #2B5329;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+            font-family: 'Graphik Trial', sans-serif;
+            font-weight: 600;
+            font-size: large;
+            box-shadow: 0 3px 4px rgba(0, 0, 0, 2.9);
+            cursor: pointer;
+        }
+        .add_to_cart:hover {
+            background: #3F6782;
+        }   .search-results {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .product_container_grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product_div {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .product_thumbnail_div img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .back-button {
+            background-color: #ffffff;
+            color: #252b61;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .back-button:hover {
+            transform: scale(1.05);
+        }
+
+        .medicine-container {
+            background-color: #ffffff;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+        }
+
+        .image-section {
+            width: 120px;
+            margin-right: 20px;
+        }
+
+        .thumbnail {
+            width: 100%;
+            height: 80px;
+            object-fit: contain;
+            border: 2px solid #e9ecef;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .thumbnail:hover {
+            border-color: #00B207;
+        }
+
+        .main-image-section {
+            flex: 1;
+            max-width: 500px;
+            margin-right: 40px;
+        }
+
+        .main-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .medicine-info {
+            flex: 1;
+            padding: 0 20px;
+            background-color: #fbf2fc;
+        }
+
+        .medicine-name {
+            color: #252b61;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .medicine-description {
+            color: #495057;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .medicine-price {
+            color: #00B207;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .add-to-cart-button {
+            background-color: #2B5329;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart-button:hover {
+            background-color: #3F6782;
+        }
+
+        @media (max-width: 768px) {
+            .medicine-container {
+                flex-direction: column;
+            }
+
+            .image-section {
+                width: 100%;
+                display: flex;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+
+            .thumbnail {
+                width: 80px;
+                margin-bottom: 0;
+            }
+        }
+
+        .cart-popup {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: white;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 1000;
+        }
+
+        .cart-popup.active {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color:#252b61 ;
+        }
+
+        .close-cart {
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .cart-items {
+            padding: 20px;
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
+            color:#252b61 ;
+        }
+
+        .cart-item {
+            display: flex;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+
+        .cart-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            border-top: 1px solid #eee;
+            background: white;
+        }
+
+        .cart-total {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .checkout-button {
+            width: 100%;
+            padding: 15px;
+            background: #2B5329;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .medicine-dates {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .date-info {
+            margin: 8px 0;
+            font-size: 14px;
+            color: #495057;
+        }
+
+        .date-label {
+            font-weight: bold;
+            display: inline-block;
+            width: 140px;
+            color: #1F6366;
+        }
+
+        .date-value {
+            color: #2B5329;
+        }
+        .footer {
+            font-family: 'graphik-trial', sans-serif;
+            font-weight: 500;
+            align-items: center;
+            display: block;
+            width: calc(100%-649px);
+            height:max-content;
+            padding-top: 12px;
+            background: #007BFF;
+            background-size: cover;
+            position: relative;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 10px;
+            padding: 60px 50px 60px 50px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.9), 0px -4px 6px rgba(0, 0, 0, 0.9);
+           
+        }
+        #cart-count {
+          
+          
+            border-radius: 50%;
+    
+            position: relative;
+       
+            font-size: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+    // Check session before loading page content
+    fetch('check_session.php')
+        .then(response => response.json())
+        .then(data => {
+            if (!data.loggedIn) {
+                window.location.href = 'login.html';
+            }
+        })
+        .catch(error => {
+            console.error('Session check error:', error);
+            window.location.href = 'login.html';
+        });
+    </script>
+    <header class="hed" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;">
+        <div class="header_panel_wrap">
+            <div  onclick="location.href='index.html'">
+                <img class="logo"
+                    src="LIGHT HOUSE MEDICALS.png">
+               
+            </div>
+
+            
+
+            <nav class="nav_buttons">
+                
+                <button class="cart" onclick="toggleCart()">
+                    <img style="display:flex; position:relative; left:30%; bottom:10%; width:30px; height:27px;"
+                    src="https://cdn1.iconfinder.com/data/icons/material-core/20/shopping-cart-256.png">
+              <span id="cart-count">0</span>
+                </button>
+
+               
+            </nav>
+        </div>
+
+
+    </header>
+            
+            </div>
+        </section>
+    </div>
+    <div id="search-results" class="search-results"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchQuery = urlParams.get('search');
+
+            if (searchQuery) {
+                // Hide all product sections and medicine container
+                document.querySelector('.product_section').style.display = 'none';
+                document.querySelector('.medicine-container').style.display = 'none';
+                document.querySelector('.back-button').style.display = 'none';
+
+                // Show the search results section
+                const searchResultsSection = document.querySelector('.search-results');
+                searchResultsSection.style.display = 'block';
+
+                // Fetch and display search results
+                fetch(`fetch_products.php?q=${encodeURIComponent(searchQuery)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        displaySearchResults(data);
+                    })
+                    .catch(error => console.error('Error:', error));
+            } else {
+                // Hide search results section when not searching
+                document.querySelector('.search-results').style.display = 'none';
+            }
+
+            function displaySearchResults(products) {
+                const productContainer = document.querySelector('.product_container_grid');
+                productContainer.innerHTML = ''; // Clear existing products
+
+                if (products.length === 0) {
+                    productContainer.innerHTML = '<p>No results found.</p>';
+                } else {
+                    products.forEach(product => {
+                        const productDiv = document.createElement('div');
+                        productDiv.className = 'product_div';
+                        productDiv.innerHTML = `
+                            <div class="product_thumbnail_div">
+                                <img src="${product.image_url}" alt="${product.name}">
+                            </div>
+                            <div class="product_thumbnail_details_1">
+                                <h4>${product.name}</h4>
+                                <p>${product.description.substring(0, 50)}...</p>
+                                <h3>₹${parseFloat(product.price).toFixed(2)}</h3>
+                            </div>
+                        `;
+                        productDiv.addEventListener('click', () => {
+                            window.location.href = `shopping.html?name=${encodeURIComponent(product.name)}&description=${encodeURIComponent(product.description)}&price=${encodeURIComponent(product.price)}&image=${encodeURIComponent(product.image_url)}`;
+                        });
+                        productContainer.appendChild(productDiv);
+                    });
+                }
+            }
+        });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+
+        if (productId) {
+            fetch(`get_product_details.php?id=${productId}`)
+                .then(response => response.json())
+                .then(product => {
+                    if (product.error) {
+                        console.error(product.error);
+                        return;
+                    }
+
+                    // Format dates to be more readable
+                    const formatDate = (dateString) => {
+                        const date = new Date(dateString);
+                        return date.toLocaleDateString('en-IN', {
+                            day: '2-digit',
+                            month: 'short',
+                            year: 'numeric'
+                        });
+                    };
+
+                    // Update product details including dates
+                    document.getElementById('medicine-name').textContent = product.name;
+                    document.getElementById('medicine-description').textContent = product.description;
+                    document.getElementById('medicine-price').textContent = `₹${product.price}`;
+                    document.getElementById('manufacture-date').textContent = formatDate(product.manufacture_date);
+                    document.getElementById('expiry-date').textContent = formatDate(product.expiry_date);
+                    
+                    // Update main image
+                    const mainImage = document.querySelector('.display');
+                    mainImage.style.backgroundImage = `url('${product.image_url}')`;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    });
+    </script>
+    <a href="index.html" class="back-button">← Back to Search</a>
+    
+    <div class="medicine-container">
+        
+        
+        <div class="main-image-section">
+            <img id="main-image" class="main-image" src="" alt="Medicine Image">
+        </div>
+        
+        <div class="medicine-info">
+            <h1 id="medicine-name" class="medicine-name"></h1>
+            <p id="medicine-description" class="medicine-description"></p>
+            <div class="medicine-dates">
+              <p class="date-info">
+                   
+                    <span id="manufacture-date" class="date-value"></span>
+                </p>
+                <p class="date-info">
+                    
+                    <span id="expiry-date" class="date-value"></span>
+                </p>
+            </div>
+            <div id="medicine-price" class="medicine-price"></div>
+            <button class="add-to-cart-button">Add to Cart</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = decodeURIComponent(urlParams.get('name') || '');
+            const description = decodeURIComponent(urlParams.get('description') || '');
+            const price = decodeURIComponent(urlParams.get('price') || '');
+            const image = decodeURIComponent(urlParams.get('image') || '');
+          
+            // Format dates for display
+            const formatDate = (dateString) => {
+                if (dateString === 'Not Available') return dateString;
+                const date = new Date(dateString);
+                return date.toLocaleDateString('en-IN', {
+                    day: '2-digit',
+                    month: 'short',
+                    year: 'numeric'
+                });
+            };
+
+            // Update the DOM with medicine details
+            document.getElementById('medicine-name').textContent = name;
+            document.getElementById('medicine-description').textContent = description;
+            document.getElementById('medicine-price').textContent = `₹${price}`;
+           
+            // Update main image
+            const mainImage = document.getElementById('main-image');
+            mainImage.src = image;
+            mainImage.onerror = function() {
+                this.src = 'images/placeholder.jpg';
+            };
+
+            // Update thumbnails
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach(thumbnail => {
+                thumbnail.src = image;
+                thumbnail.onerror = function() {
+                    this.src = 'images/placeholder.jpg';
+                };
+            });
+
+            // Add to cart functionality
+            const addToCartButton = document.querySelector('.add-to-cart-button');
+            addToCartButton.addEventListener('click', function() {
+                const existingItem = cart.find(item => item.name === name);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        name: name,
+                        price: price,
+                        image: image,
+                        quantity: 1
+                    });
+                }
+                
+                updateCartDisplay();
+                toggleCart(); // Show cart after adding item
+            });
+        });
+    </script>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        updateCartDisplay();
+
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const cartTotal = document.getElementById('cart-total');
+            
+            // Update cart count
+            cartCount.textContent = cart.length;
+            
+            // Update cart items
+            if (!cartItems) return; // Exit if element doesn't exist
+            cartItems.innerHTML = '';
+            let total = 0;
+            
+            cart.forEach((item, index) => {
+                total += parseFloat(item.price) * item.quantity;
+                cartItems.innerHTML += `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}">
+                        <div class="cart-item-details">
+                            <h4>${item.name}</h4>
+                            <p>₹${item.price}</p>
+                            <div class="quantity-controls">
+                                <button onclick="updateQuantity(${index}, -1)">-</button>
+                                <span>${item.quantity}</span>
+                                <button onclick="updateQuantity(${index}, 1)">+</button>
+                                <button onclick="removeFromCart(${index})">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            cartTotal.textContent = total.toFixed(2);
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        function toggleCart() {
+            const cartPopup = document.getElementById('cart-popup');
+            cartPopup.classList.toggle('active');
+        }
+
+        function updateQuantity(index, change) {
+            cart[index].quantity += change;
+            if (cart[index].quantity < 1) {
+                cart.splice(index, 1);
+            }
+            updateCartDisplay();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartDisplay();
+        }
+    </script>
+    <div id="cart-popup" class="cart-popup">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <span class="close-cart" onclick="toggleCart()">×</span>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <!-- Cart items will be added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                Total: ₹<span id="cart-total">0.00</span>
+            </div>
+            <button class="checkout-button" onclick="proceedToCheckout()">Proceed to Checkout</button>
+        </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Function to handle search and display results
+        async function searchProducts(event) {
+            event.preventDefault();
+            const searchTerm = document.getElementById('search-input').value.trim();
+            
+            try {
+                const response = await fetch('search.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ searchTerm })
+                });
+
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    const resultsContainer = document.getElementById('search-results');
+                    resultsContainer.innerHTML = '';
+
+                    data.results.forEach(product => {
+                        const productCard = `
+                            <div class="product-card">
+                                <img src="${product.image}" alt="${product.name}">
+                                <h3>${product.name}</h3>
+                                <p>${product.description}</p>
+                                <p class="price">₹${product.price}</p>
+                                <p class="dates">
+                                    <span class="manufacture-date">Manufacture: ${product.manufacture_date}</span><br>
+                                    <span class="expiry-date">Expiry: ${product.expiry_date}</span>
+                                </p>
+                                <button onclick="viewProduct('${product.name}', '${product.description}', 
+                                    '${product.price}', '${product.image}', '${product.manufacture_date}', 
+                                    '${product.expiry_date}')" class="view-button">
+                                    View Details
+                                </button>
+                            </div>
+                        `;
+                        resultsContainer.innerHTML += productCard;
+                    });
+                } else {
+                    console.error('Search failed:', data.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        // Function to view product details
+        window.viewProduct = function(name, description, price, image, manufactureDate, expiryDate) {
+            const params = new URLSearchParams({
+                name: name,
+                description: description,
+                price: price,
+                image: image,
+               
+            });
+            window.location.href = `shopping.html?${params.toString()}`;
+        };
+
+        // Load product details if viewing a specific product
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('name')) {
+            const name = decodeURIComponent(urlParams.get('name'));
+            const description = decodeURIComponent(urlParams.get('description'));
+            const price = decodeURIComponent(urlParams.get('price'));
+            const image = decodeURIComponent(urlParams.get('image'));
+           
+            // Update the product details in the DOM
+            document.getElementById('medicine-name').textContent = name;
+            document.getElementById('medicine-description').textContent = description;
+            document.getElementById('medicine-price').textContent = `₹${price}`;
+           const mainImage = document.getElementById('main-image');
+            if (mainImage) {
+                mainImage.src = image;
+                mainImage.alt = name;
+            }
+        }
+
+        // Add event listener for search form
+        const searchForm = document.querySelector('.search-form');
+        if (searchForm) {
+            searchForm.addEventListener('submit', searchProducts);
+        }
+    });
+    </script>
+    <script>
+    async function proceedToCheckout() {
+        try {
+            // Get cart data from localStorage
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            if (cartItems.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+
+            // Send cart data to PHP
+            const response = await fetch('save_cart.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    items: cartItems,
+                    total: document.getElementById('cart-total').textContent
+                })
+            });
+
+            const result = await response.json();
+            
+            if (result.success) {
+                // Clear local storage cart
+                localStorage.removeItem('cart');
+                // Redirect to checkout page
+                window.location.href = 'checkout.php';
+            } else {
+                throw new Error(result.message || 'Failed to process checkout');
+            }
+        } catch (error) {
+            console.error('Checkout error:', error);
+            alert('Failed to process checkout. Please try again.');
+        }
+    }
+    </script>
+       <footer class="footer" style="color: #ffff; padding: 20px; text-align: center; ">
+        <div style=" font-size:30px; max-width: 1200px; margin: 0 auto;">
+            <!-- Company Info -->
+            <div style="margin-bottom: 20px; ">
+               <div > <h4 style="margin: 0; font-weight:900; color:#042c96; background-color:white; ">LIGHT HOUSE MEDICALS</h4>
+               </div>
+                 <p style="margin: 5px 0; font-size: 14px; color: #bb96ff; ">Your trusted online pharmacy and healthcare
+                    partner</p>
+            </div>
+
+            <!-- Footer Links -->
+            <div style="margin-bottom: 20px; font-weight: 600;">
+                <a href="/about" style="margin-right: 15px; color: #012f61; text-decoration: none;">About Us</a>
+                <a href="/contact" style="margin-right: 15px; color:#012f61; text-decoration: none;">Contact</a>
+                <a href="/privacy-policy" style="margin-right: 15px; color: #012f61; text-decoration: none;">Privacy
+                    Policy</a>
+                <a href="/terms" style="color:#012f61; text-decoration: none;">Terms of Service</a>
+            </div>
+
+            <!-- Social Media Links -->
+            <div style="margin-bottom: 20px;">
+                <a href="https://facebook.com" target="_blank"
+                    style="margin-right: 10px; color:#e433be; text-decoration: none;">Facebook</a>
+                
+                <a href="https://instagram.com" target="_blank"
+                    style="margin-right: 10px; color: #e433be; text-decoration: none;">Instagram</a>
+                <a href="https://linkedin.com" target="_blank"
+                    style="color:#e433be; text-decoration: none;">LinkedIn</a>
+        
+
+            <!-- Copyright -->
+            
+                <p style="font-size: 12px; color: #999; margin: 0;">&copy; 2025 LIGHT HOUSE MEDICALS. All rights reserved.
+                </p>
+              
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
